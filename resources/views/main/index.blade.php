@@ -1,5 +1,7 @@
+@extends('layouts.main')
 
-
+@section('content')
+    
 <main class="blog">
     <div class="container">
         <h1 class="edica-page-title" data-aos="fade-up">Blog</h1>
@@ -137,16 +139,16 @@
                                     </figcaption>
                                 </figure>
                                 <figure class="carousel-item">
-                                        <img src="assets/images/blog_7.jpg" alt="First slide">
-                                        <figcaption class="post-title">
-                                            <a href="#!">Front becomes an official Instagram Marketing Partner</a>
-                                        </figcaption>
+                                    <img src="assets/images/blog_7.jpg" alt="First slide">
+                                    <figcaption class="post-title">
+                                        <a href="#!">Front becomes an official Instagram Marketing Partner</a>
+                                    </figcaption>
                                 </figure>
                                 <div class="carousel-item">
-                                        <img src="assets/images/blog_5.jpg" alt="First slide">
-                                        <figcaption class="post-title">
-                                            <a href="#!">Front becomes an official Instagram Marketing Partner</a>
-                                        </figcaption>
+                                    <img src="assets/images/blog_5.jpg" alt="First slide">
+                                    <figcaption class="post-title">
+                                        <a href="#!">Front becomes an official Instagram Marketing Partner</a>
+                                    </figcaption>
                                 </div>
                             </div>
                         </div>
@@ -196,5 +198,6 @@
             </div>
         </div>
     </div>
-
-</m
+    
+</main>
+@endsection

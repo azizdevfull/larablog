@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return 123434;
+        return view('admin.main.index');
     }
 }

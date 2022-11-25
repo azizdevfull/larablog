@@ -9,5 +9,5 @@ class Post extends Model
 {
     use HasFactory;
     protected $table = 'posts';
-    protected $guards = false;
+    protected $guarded = false;
 }

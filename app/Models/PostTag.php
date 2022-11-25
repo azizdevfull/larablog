@@ -9,5 +9,5 @@ class PostTag extends Model
 {
     use HasFactory;
     protected $table = 'post_tags';
-    protected $guards = false;
+    protected $guarded = false;
 }

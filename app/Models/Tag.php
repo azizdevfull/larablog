@@ -9,5 +9,5 @@ class Tag extends Model
 {
     use HasFactory;
     protected $table = 'tags';
-    protected $guards = false;
+    protected $guarded = false;
 }

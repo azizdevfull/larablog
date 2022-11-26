@@ -28,13 +28,13 @@
         <div class="col-12">
           Update Category
           
-          <form action="{{ route('admin.category.update', $category) }}" method="POST" style="width: 30%;">
+          <form action="{{ route('admin.tag.update', $tag) }}" method="POST" style="width: 30%;">
             @csrf
             @method('PATCH')
             <div class="card-body">
               <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" name="title" value="{{ $category->title }}" required>
+                <input type="text" class="form-control" name="title" value="{{ $tag->title }}" required>
                 @error('title')
                     <div class="text-danger">
                        {{ $message }}

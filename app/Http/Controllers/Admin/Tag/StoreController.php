@@ -14,7 +14,7 @@ class StoreController extends Controller
     public function index(StoreRequest $request)
     {
         $data = $request->validated();
-        $category = Tag::firstOrCreate($data);
+        $tag = Tag::firstOrCreate($data);
 
         return redirect()->route('admin.tag.index');
     }

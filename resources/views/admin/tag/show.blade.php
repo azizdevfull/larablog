@@ -7,10 +7,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6 d-flex align-item-center">
-            <h1 class="m-0 mr-2">{{$category->title}}</h1>
-           <a href="{{ route('admin.category.edit', $category) }}" class="text-success"><i class="bi bi-pen"></i></a>
+            <h1 class="m-0 mr-2">{{$tag->title}}</h1>
+           <a href="{{ route('admin.tag.edit', $tag) }}" class="text-success"><i class="bi bi-pen"></i></a>
           
-          <form action="{{ route('admin.category.delete', $category) }}" method="POST">
+          <form action="{{ route('admin.tag.delete', $tag) }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="border-0 bg-transparent">
@@ -42,11 +42,11 @@
                   <tbody>
                     <tr>
                       <td>ID</td>
-                      <td>{{ $category->id }}</td>
+                      <td>{{ $tag->id }}</td>
                     </tr>
                     <tr>
                       <td>Title</td>
-                      <td>{{ $category->title }}</td>
+                      <td>{{ $tag->title }}</td>
                     </tr>
                   </tbody>
                 </table>

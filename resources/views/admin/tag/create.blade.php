@@ -28,7 +28,7 @@
         <div class="col-12">
           Create Category
           
-          <form action="{{ route('admin.category.store') }}" method="POST" style="width: 30%;">
+          <form action="{{ route('admin.tag.store') }}" method="POST" style="width: 30%;">
             @csrf
             <div class="card-body">
               <div class="form-group">

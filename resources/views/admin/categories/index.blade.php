@@ -49,7 +49,7 @@
                       <td>{{ $category->id }}</td>
                       <td>{{ $category->title }}</td>
                       <td><a href="{{ route('admin.category.show', $category) }}"><i class="bi bi-eye"></i></a></td>
-                      <td><a href="{{ route('admin.category.edit', $category) }}"><i class="bi bi-pen"></i></a></td>
+                      <td><a href="{{ route('admin.category.edit', $category) }}" class="text-success"><i class="bi bi-pen"></i></a></td>
                     </tr>
                     @endforeach
                   </tbody>

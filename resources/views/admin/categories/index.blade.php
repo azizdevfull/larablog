@@ -25,7 +25,9 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <h1>Aziz</h1>
+          <div class="col-12">
+            Category
+          </div>
         </div>
         <!-- /.row -->
 

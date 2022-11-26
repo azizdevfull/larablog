@@ -28,8 +28,9 @@
         <div class="col-12">
           Update Category
           
-          <form action="#" method="POST" style="width: 30%;">
+          <form action="{{ route('admin.category.update', $category) }}" method="POST" style="width: 30%;">
             @csrf
+            @method('PATCH')
             <div class="card-body">
               <div class="form-group">
                 <label>Title</label>

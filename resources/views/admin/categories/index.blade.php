@@ -39,6 +39,7 @@
                     <tr>
                       <th>ID</th>
                       <th>Title</th>
+                      <th>View</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -46,6 +47,7 @@
                     <tr>
                       <td>{{ $category->id }}</td>
                       <td>{{ $category->title }}</td>
+                      <td><a href=""><i class="bi bi-eye"></a></i></td>
                     </tr>
                     @endforeach
                   </tbody>
@@ -62,5 +64,9 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+
   </div>
+  <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
+
   @endsection

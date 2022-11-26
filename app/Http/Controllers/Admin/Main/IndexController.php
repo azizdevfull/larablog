@@ -12,4 +12,8 @@ class IndexController extends Controller
         return view('admin.main.index');
     }
     
+    public function tag()
+    {
+        return view('admin.main.index');
+    }
 }

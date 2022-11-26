@@ -8,7 +8,17 @@ use App\Http\Controllers\Admin\Category\ShowController;
 use App\Http\Controllers\Admin\Category\StoreController;
 use App\Http\Controllers\Admin\Category\CreateController;
 use App\Http\Controllers\Admin\Category\DeleteController;
+
+use App\Http\Controllers\Admin\Tag\EditController as EditTagController;
+use App\Http\Controllers\Admin\Tag\ShowController as ShowTagController;
+use App\Http\Controllers\Admin\Tag\StoreController as StoreTagController;
+use App\Http\Controllers\Admin\Tag\CreateController as CreateTagController;
+use App\Http\Controllers\Admin\Tag\DeleteController as DeleteTagController;
+use App\Http\Controllers\Admin\Tag\IndexController as IndexTagController;
+
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
+use App\Http\Controllers\Admin\Main\IndexController as TagIndexController;
+
 use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryController;
 
 /*
@@ -26,6 +36,7 @@ Route::get('/', [IndexController::class, 'index']);
 
 Route::prefix('admin')->name('admin.')->group(function () {
 Route::get('/', [AdminIndexController::class, 'index']);
+// Category routes
 Route::prefix('categories')->name('category.')->group(function () {
     Route::get('/', [AdminCategoryController::class, 'category'])->name('index');
     Route::get('/create', [CreateController::class, 'index'])->name('create');
@@ -35,7 +46,18 @@ Route::prefix('categories')->name('category.')->group(function () {
     Route::patch('/{category}', [EditController::class, 'update'])->name('update');
     Route::delete('/{category}', [DeleteController::class, 'delete'])->name('delete');
 });
-    
+
+// Tags routes
+Route::prefix('tags')->name('tag.')->group(function () {
+    Route::get('/', [IndexTagController::class, 'index'])->name('index');
+    Route::get('/create', [CreateTagController::class, 'index'])->name('create');
+    Route::post('/', [StoreTagController::class, 'index'])->name('store');
+    Route::get('/{tag}', [ShowTagController::class, 'index'])->name('show');
+    Route::get('/{tag}/edit', [EditTagController::class, 'index'])->name('edit');
+    Route::patch('/{tag}', [EditTagController::class, 'update'])->name('update');
+    Route::delete('/{tag}', [DeleteTagController::class, 'delete'])->name('delete');
+});
+
 });
 Auth::routes();
 

@@ -28,11 +28,12 @@
         <div class="col-12">
           Create Category
           
-          <form style="width: 30%;">
+          <form action="{{ route('admin.category.store') }}" method="POST" style="width: 30%;">
+            @csrf
             <div class="card-body">
               <div class="form-group">
                 <label>Title</label>
-                <input type="email" class="form-control"placeholder="Category Title">
+                <input type="text" class="form-control" name="title" placeholder="Category Title">
               </div>
             </div>
             <!-- /.card-body -->

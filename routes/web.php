@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Main\IndexController;
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
+use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::get('/', [IndexController::class, 'index']);
 
 Route::prefix('admin')->group(function () {
 Route::get('/', [AdminIndexController::class, 'index']);
+Route::get('/categories', [AdminCategoryController::class, 'category']);
     
 });
 Auth::routes();

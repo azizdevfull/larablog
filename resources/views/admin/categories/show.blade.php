@@ -32,10 +32,10 @@
                   <tbody>
                     <tr>
                       <td>ID</td>
-                      <td>{{ $category->title }}</td>
+                      <td>{{ $category->id }}</td>
                     </tr>
                     <tr>
-                      <td>View</td>
+                      <td>Title</td>
                       <td>{{ $category->title }}</td>
                     </tr>
                   </tbody>

@@ -27,6 +27,20 @@
       <div class="row">
         <div class="col-12">
           Create Category
+          
+          <form style="width: 30%;">
+            <div class="card-body">
+              <div class="form-group">
+                <label>Title</label>
+                <input type="email" class="form-control"placeholder="Category Title">
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </form>
+
         </div>
       </div>
       <!-- /.row -->

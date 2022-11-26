@@ -39,11 +39,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <div class="sidebar">
-
-    </div>
-  </aside>
+@include('admin.includes.sidebar')
 @yield('content')
   <!-- /.content-wrapper -->
   <footer class="main-footer">

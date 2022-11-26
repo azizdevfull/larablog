@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Main\IndexController;
+use App\Http\Controllers\Admin\Category\EditController;
 use App\Http\Controllers\Admin\Category\ShowController;
 use App\Http\Controllers\Admin\Category\StoreController;
 use App\Http\Controllers\Admin\Category\CreateController;
@@ -29,6 +30,7 @@ Route::prefix('categories')->name('category.')->group(function () {
     Route::get('/create', [CreateController::class, 'index'])->name('create');
     Route::post('/', [StoreController::class, 'index'])->name('store');
     Route::get('/{category}', [ShowController::class, 'index'])->name('show');
+    Route::get('/{category}/edit', [EditController::class, 'index'])->name('show');
 });
     
 });

@@ -12,6 +12,6 @@ class DeleteController extends Controller
     {
         $category->delete();
 
-        return redirect()->back();
+        return redirect()->route('admin.category.index');
     }
 }

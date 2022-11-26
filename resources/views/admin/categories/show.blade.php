@@ -9,6 +9,14 @@
           <div class="col-sm-6 d-flex align-item-center">
             <h1 class="m-0 mr-2">{{$category->title}}</h1>
            <a href="{{ route('admin.category.edit', $category) }}" class="text-success"><i class="bi bi-pen"></i></a>
+          
+          <form action="{{ route('admin.category.delete', $category) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="border-0 bg-transparent">
+              <i class="bi bi-trash text-danger"></i>
+            </button>
+          </form>
 
           </div><!-- /.col -->
           <div class="col-sm-6">

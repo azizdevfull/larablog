@@ -28,7 +28,7 @@ Route::prefix('categories')->name('category.')->group(function () {
     Route::get('/', [AdminCategoryController::class, 'category'])->name('index');
     Route::get('/create', [CreateController::class, 'index'])->name('create');
     Route::post('/', [StoreController::class, 'index'])->name('store');
-    Route::post('/{category}', [ShowController::class, 'index'])->name('show');
+    Route::get('/{category}', [ShowController::class, 'index'])->name('show');
 });
     
 });

@@ -10,6 +10,6 @@ class ShowController extends Controller
 {
     public function index(Category $category)
     {
-        return view('admin.category.show', compact('category'));
+        return view('admin.categories.show', compact('category'));
     }
 }

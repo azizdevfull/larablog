@@ -30,7 +30,8 @@ Route::prefix('categories')->name('category.')->group(function () {
     Route::get('/create', [CreateController::class, 'index'])->name('create');
     Route::post('/', [StoreController::class, 'index'])->name('store');
     Route::get('/{category}', [ShowController::class, 'index'])->name('show');
-    Route::get('/{category}/edit', [EditController::class, 'index'])->name('show');
+    Route::get('/{category}/edit', [EditController::class, 'index'])->name('edit');
+    Route::patch('/{category}', [EditController::class, 'update'])->name('update');
 });
     
 });

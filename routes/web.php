@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [IndexController::class, 'index']);
+Route::get('/', [IndexController::class, 'index'])->name('category.index');
 
 Route::prefix('admin')->group(function () {
 Route::get('/', [AdminIndexController::class, 'index']);

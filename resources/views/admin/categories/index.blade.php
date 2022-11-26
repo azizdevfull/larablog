@@ -25,6 +25,9 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+          <div class="col-1">
+            <a href="" class="btn btn-block btn-primary">Add</a>
+          </div>
           <div class="col-12">
             Category
           </div>

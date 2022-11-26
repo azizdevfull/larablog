@@ -41,6 +41,7 @@
                       <th>Title</th>
                       <th>View</th>
                       <th>Edit</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -50,6 +51,15 @@
                       <td>{{ $category->title }}</td>
                       <td><a href="{{ route('admin.category.show', $category) }}"><i class="bi bi-eye"></i></a></td>
                       <td><a href="{{ route('admin.category.edit', $category) }}" class="text-success"><i class="bi bi-pen"></i></a></td>
+                      <td>
+                      <form action="{{ route('admin.category.delete', $category) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="border-0 bg-transparent">
+                          <i class="bi bi-trash text-danger"></i>
+                        </button>
+                      </form>
+                      </td>
                     </tr>
                     @endforeach
                   </tbody>

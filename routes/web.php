@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Category\EditController;
 use App\Http\Controllers\Admin\Category\ShowController;
 use App\Http\Controllers\Admin\Category\StoreController;
 use App\Http\Controllers\Admin\Category\CreateController;
+use App\Http\Controllers\Admin\Category\DeleteController;
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
 use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryController;
 
@@ -32,6 +33,7 @@ Route::prefix('categories')->name('category.')->group(function () {
     Route::get('/{category}', [ShowController::class, 'index'])->name('show');
     Route::get('/{category}/edit', [EditController::class, 'index'])->name('edit');
     Route::patch('/{category}', [EditController::class, 'update'])->name('update');
+    Route::delete('/{category}', [DeleteController::class, 'delete'])->name('delete');
 });
     
 });

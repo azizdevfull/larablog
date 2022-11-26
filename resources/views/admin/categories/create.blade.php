@@ -33,7 +33,12 @@
             <div class="card-body">
               <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" name="title" placeholder="Category Title">
+                <input type="text" class="form-control" name="title" placeholder="Category Title" required>
+                @error('title')
+                    <div class="text-danger">
+                       {{ $message }}
+                    </div>
+                @enderror
               </div>
             </div>
             <!-- /.card-body -->

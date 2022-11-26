@@ -17,11 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [IndexController::class, 'index'])->name('category.index');
+Route::get('/', [IndexController::class, 'index']);
 
 Route::prefix('admin')->group(function () {
 Route::get('/', [AdminIndexController::class, 'index']);
-Route::get('/categories', [AdminCategoryController::class, 'category']);
+Route::prefix('categories')->group(function () {
+    Route::get('/', [AdminCategoryController::class, 'category'])->name('category.index');
+    Route::get('/create', [CreateController::class, 'category'])->name('category.create');
+});
     
 });
 Auth::routes();

@@ -6,14 +6,19 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Post\PostRequest;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
+
+// use Illuminate\Contracts\Cache\Store;
 
 class StoreController extends Controller
 {
     public function index(PostRequest $request)
     {
         $data = $request->validated();
-        dd($data);
-        $post = Post::firstOrCreate($data);
+
+        $data['preview_image'] = Storage::put('/images',$data['preview_image']);
+        $data['main_image'] = Storage::put('/images',$data['main_image']);
+        Post::firstOrCreate($data);
 
         return redirect()->route('admin.post.index');
     }

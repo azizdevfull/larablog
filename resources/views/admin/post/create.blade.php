@@ -49,10 +49,23 @@
             @enderror
               </div>
               <div class="form-group w-50">
-                <label for="exampleInputFile">Add Image</label>
+                <label for="exampleInputFile">Add Main Image</label>
                 <div class="input-group">
                   <div class="custom-file">
                     <input type="file" class="custom-file-input" name="main_image">
+                    <label class="custom-file-label" >Choose file</label>
+                  </div>
+                  <div class="input-group-append">
+                    <span class="input-group-text">Upload</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group w-50">
+                <label for="exampleInputFile">Add Image</label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="preview_image">
                     <label class="custom-file-label" >Choose file</label>
                   </div>
                   <div class="input-group-append">

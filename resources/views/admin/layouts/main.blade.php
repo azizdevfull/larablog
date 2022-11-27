@@ -67,6 +67,9 @@
 
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+
+
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
@@ -92,6 +95,10 @@
         ]
   }
   );
+});
+
+$(function () {
+  bsCustomFileInput.init();
 });
 </script>
 </body>

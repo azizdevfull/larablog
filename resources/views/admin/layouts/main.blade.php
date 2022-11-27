@@ -77,7 +77,8 @@
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <script>
   $(document).ready(function() {
-  $('#summernote').summernote({
+  $('#summernote').summernote(
+    {
         tabsize: 2,
         height: 120,
         toolbar: [
@@ -89,7 +90,8 @@
           ['insert', ['link', 'picture', 'video']],
           ['view', ['fullscreen', 'codeview', 'help']]
         ]
-  });
+  }
+  );
 });
 </script>
 </body>

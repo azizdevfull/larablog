@@ -33,7 +33,7 @@
             <div class="card-body">
               <div class="form-group w-25">
                 <label>Title</label>
-                <input type="text" class="form-control" name="title" placeholder="Category Title" required>
+                <input type="text" class="form-control" value="{{ old('title') }}" name="title" placeholder="Category Title" required>
                 @error('title')
                     <div class="text-danger">
                        {{ $message }}
@@ -41,7 +41,12 @@
                 @enderror
               </div>
               <div class="form-group">
-                <textarea id="summernote" name="content"></textarea>
+                <textarea id="summernote" name="content" value="{{ old('content') }}"></textarea>
+                @error('content')
+                <div class="text-danger">
+                   {{ $message }}
+                </div>
+            @enderror
               </div>
               <div class="form-group">
             <!-- /.card-body -->

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin\Post;
 
-use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Post\PostRequest;
@@ -10,9 +9,9 @@ use App\Models\Post;
 
 class EditController extends Controller
 {
-    public function index(Category $category)
+    public function index(Post $post)
     {
-        return view('admin.categories.edit', compact('category'));
+        return view('admin.post.edit', compact('post'));
     }
 
     public function update(PostRequest $request, Post $post)

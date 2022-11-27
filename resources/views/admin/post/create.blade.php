@@ -28,10 +28,10 @@
         <div class="col-12">
           Create Category
           
-          <form action="{{ route('admin.post.store') }}" method="POST" style="width: 30%;">
+          <form action="{{ route('admin.post.store') }}" method="POST">
             @csrf
             <div class="card-body">
-              <div class="form-group">
+              <div class="form-group w-25">
                 <label>Title</label>
                 <input type="text" class="form-control" name="title" placeholder="Category Title" required>
                 @error('title')

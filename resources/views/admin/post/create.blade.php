@@ -40,11 +40,17 @@
                     </div>
                 @enderror
               </div>
-            </div>
+              <div class="form-group">
+                <textarea id="summernote" name="content"></textarea>
+              </div>
+              <div class="form-group">
             <!-- /.card-body -->
             <div class="card-footer">
               <button type="submit" class="btn btn-primary">Create</button>
+            </div>                
+              </div>
             </div>
+
           </form>
 
         </div>

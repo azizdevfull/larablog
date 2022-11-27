@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}} ">
+
+  <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css')}} ">
+  
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
@@ -60,6 +63,10 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>

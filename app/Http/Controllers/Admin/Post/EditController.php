@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\StoreRequest;
+use App\Models\Post;
 
 class EditController extends Controller
 {
@@ -14,10 +15,10 @@ class EditController extends Controller
         return view('admin.categories.edit', compact('category'));
     }
 
-    public function update(StoreRequest $request, Category $category)
+    public function update(StoreRequest $request, Post $post)
     {
         $data = $request->validated();
-        $category->update($data);
-        return view('admin.categories.show', compact('category'));
+        $post->update($data);
+        return view('admin.post.show', compact('post'));
     }
 }

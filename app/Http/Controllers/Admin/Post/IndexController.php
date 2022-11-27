@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Post;
 
-use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function category()
     {
-        $categories = Category::all();
-        return view('admin.categories.index', compact('categories'));
+        $posts = Post::all();
+        return view('admin.post.index', compact('posts'));
     }
 }

@@ -16,6 +16,13 @@ use App\Http\Controllers\Admin\Tag\CreateController as CreateTagController;
 use App\Http\Controllers\Admin\Tag\DeleteController as DeleteTagController;
 use App\Http\Controllers\Admin\Tag\IndexController as IndexTagController;
 
+use App\Http\Controllers\Admin\Post\EditController as EditPostController;
+use App\Http\Controllers\Admin\Post\ShowController as ShowPostController;
+use App\Http\Controllers\Admin\Post\StoreController as StorePostController;
+use App\Http\Controllers\Admin\Post\CreateController as CreatePostController;
+use App\Http\Controllers\Admin\Post\DeleteController as DeletePostController;
+use App\Http\Controllers\Admin\Post\IndexController as IndexPostController;
+
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
 use App\Http\Controllers\Admin\Main\IndexController as TagIndexController;
 
@@ -36,6 +43,18 @@ Route::get('/', [IndexController::class, 'index']);
 
 Route::prefix('admin')->name('admin.')->group(function () {
 Route::get('/', [AdminIndexController::class, 'index']);
+
+// Post routes
+Route::prefix('posts')->name('post.')->group(function () {
+    Route::get('/', [IndexPostController::class, 'index'])->name('index');
+    Route::get('/create', [CreatePostController::class, 'index'])->name('create');
+    Route::post('/', [StorePostController::class, 'index'])->name('store');
+    Route::get('/{post}', [ShowPostController::class, 'index'])->name('show');
+    Route::get('/{post}/edit', [EditPostController::class, 'index'])->name('edit');
+    Route::patch('/{post}', [EditPostController::class, 'update'])->name('update');
+    Route::delete('/{post}', [DeletePostController::class, 'delete'])->name('delete');
+});
+
 // Category routes
 Route::prefix('categories')->name('category.')->group(function () {
     Route::get('/', [AdminCategoryController::class, 'category'])->name('index');

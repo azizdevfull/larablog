@@ -12,6 +12,7 @@ class StoreController extends Controller
     public function index(PostRequest $request)
     {
         $data = $request->validated();
+        dd($data);
         $post = Post::firstOrCreate($data);
 
         return redirect()->route('admin.post.index');

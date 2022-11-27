@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
-    public function category()
+    public function index()
     {
         $posts = Post::all();
         return view('admin.post.index', compact('posts'));

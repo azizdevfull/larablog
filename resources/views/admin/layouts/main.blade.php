@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}} ">
 
   <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css')}} ">
+
+  <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css')}} ">
   
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
@@ -69,6 +71,10 @@
 
 <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 
+<script src="{{ asset('plugins/select2/css/select2.min.css') }}"></script>
+
+<script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
+
 
 <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -100,6 +106,9 @@
 $(function () {
   bsCustomFileInput.init();
 });
+
+    //Initialize Select2 Elements
+    $('.select2').select2()
 </script>
 <style>
   .custom-file-input:lang(en)~.custom-file-label::after{

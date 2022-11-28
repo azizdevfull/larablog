@@ -93,11 +93,18 @@
                     >{{ $category->title }}</option>
                   @endforeach
                 </select>
-                @error('category_id')
-                <div class="text-danger">
-                   {{ $message }}
-                </div>
-            @enderror
+              </div>
+              <div class="form-group">
+                <label>Tag</label>
+                <select class="select2" multiple="multiple" data-placeholder="Select a Tag" style="width: 100%;">
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
               </div>
               <div class="form-group">
             <!-- /.card-body -->

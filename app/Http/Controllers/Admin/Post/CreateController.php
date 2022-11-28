@@ -10,7 +10,7 @@ class CreateController extends Controller
 {
     public function index()
     {
-        $categoriest = Category::all();
+        $categories = Category::all();
         return view('admin.post.create', compact('categories'));
     }
 }

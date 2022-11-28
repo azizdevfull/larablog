@@ -74,6 +74,15 @@
                 </div>
               </div>
               <div class="form-group">
+                <label>Select Category</label>
+                <select name="category_id" class="form-control">
+                  @foreach ($categories as $category)
+                      
+                  <option value="{{ $category->id }}">{{ $category->title }}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
             <!-- /.card-body -->
             <div class="card-footer">
               <button type="submit" class="btn btn-primary">Create</button>

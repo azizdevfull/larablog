@@ -33,7 +33,7 @@
             <div class="card-body">
               <div class="form-group w-25">
                 <label>Title</label>
-                <input type="text" class="form-control" value="{{ old('title') }}" name="title" placeholder="Category Title" required>
+                <input type="text" class="form-control" value="{{ old('title') }}" name="title" placeholder="Category Title">
                 @error('title')
                     <div class="text-danger">
                        {{ $message }}
@@ -88,7 +88,9 @@
                 <select name="category_id" class="form-control">
                   @foreach ($categories as $category)
                       
-                  <option value="{{ $category->id }}">{{ $category->title }}</option>
+                  <option value="{{ $category->id }}"
+                    {{ $category->id == old('category_id') ? 'selected' : '' }}
+                    >{{ $category->title }}</option>
                   @endforeach
                 </select>
                 @error('category_id')

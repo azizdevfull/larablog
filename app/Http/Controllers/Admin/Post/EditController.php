@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\Post\EditRequest;
+use App\Http\Controllers\Admin\Post\BaseController;
 
-class EditController extends Controller
+class EditController extends BaseController
 {
     public function index(Post $post)
     {
@@ -22,13 +23,8 @@ class EditController extends Controller
     public function update(EditRequest $request, Post $post)
     {
         $data = $request->validated();
+        $post = $this->service->update($data, $post);
 
-        $tagIds = $data['tag_ids'];
-        unset($data['tag_ids']);
-        $data['preview_image'] = Storage::disk('public')->put('/images',$data['preview_image']);
-        $data['main_image'] = Storage::disk('public')->put('/images',$data['main_image']);
-        $post->update($data);
-        $post->tags()->sync($tagIds);
         return view('admin.post.show', compact('post'));
     }
 }

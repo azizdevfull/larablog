@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 
-class DeleteController extends Controller
+class DeleteController extends BaseController
 {
     public function delete(Post $post)
     {

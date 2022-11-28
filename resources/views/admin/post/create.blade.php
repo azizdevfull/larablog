@@ -59,6 +59,11 @@
                     <span class="input-group-text">Upload</span>
                   </div>
                 </div>
+                @error('main_image')
+                <div class="text-danger">
+                   {{ $message }}
+                </div>
+            @enderror
               </div>
 
               <div class="form-group w-50">
@@ -72,6 +77,11 @@
                     <span class="input-group-text">Upload</span>
                   </div>
                 </div>
+                @error('preview_image')
+                <div class="text-danger">
+                   {{ $message }}
+                </div>
+            @enderror
               </div>
               <div class="form-group">
                 <label>Select Category</label>
@@ -81,6 +91,11 @@
                   <option value="{{ $category->id }}">{{ $category->title }}</option>
                   @endforeach
                 </select>
+                @error('category_id')
+                <div class="text-danger">
+                   {{ $message }}
+                </div>
+            @enderror
               </div>
               <div class="form-group">
             <!-- /.card-body -->

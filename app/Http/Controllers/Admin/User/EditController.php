@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\User;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Category\StoreRequest;
+use App\Http\Requests\Admin\User\UpdateRequest;
 
 class EditController extends Controller
 {
@@ -14,7 +14,7 @@ class EditController extends Controller
         return view('admin.user.edit', compact('user'));
     }
 
-    public function update(StoreRequest $request, User $user)
+    public function update(UpdateRequest $request, User $user)
     {
         $data = $request->validated();
         $user->update($data);

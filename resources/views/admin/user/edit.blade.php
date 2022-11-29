@@ -28,19 +28,30 @@
         <div class="col-12">
           Update Category
           
-          <form action="{{ route('admin.category.update', $category) }}" method="POST" style="width: 30%;">
+          <form action="{{ route('admin.user.update', $user) }}" method="POST" style="width: 30%;">
             @csrf
             @method('PATCH')
             <div class="card-body">
               <div class="form-group">
-                <label>Title</label>
-                <input type="text" class="form-control" name="title" value="{{ $category->title }}" required>
-                @error('title')
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" value="{{ $user->name }}" required>
+                @error('name')
                     <div class="text-danger">
                        {{ $message }}
                     </div>
                 @enderror
               </div>
+
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email" value="{{ $user->email }}" required>
+                @error('email')
+                    <div class="text-danger">
+                       {{ $message }}
+                    </div>
+                @enderror
+              </div>
+
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

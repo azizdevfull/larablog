@@ -23,6 +23,12 @@ use App\Http\Controllers\Admin\Post\CreateController as CreatePostController;
 use App\Http\Controllers\Admin\Post\DeleteController as DeletePostController;
 use App\Http\Controllers\Admin\Post\IndexController as IndexPostController;
 
+use App\Http\Controllers\Admin\User\EditController as EditUserController;
+use App\Http\Controllers\Admin\User\ShowController as ShowUserController;
+use App\Http\Controllers\Admin\User\StoreController as StoreUserController;
+use App\Http\Controllers\Admin\User\CreateController as CreateUserController;
+use App\Http\Controllers\Admin\User\DeleteController as DeleteUserController;
+
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
 use App\Http\Controllers\Admin\Main\IndexController as TagIndexController;
 
@@ -79,12 +85,12 @@ Route::prefix('tags')->name('tag.')->group(function () {
 
 Route::prefix('users')->name('user.')->group(function () {
     Route::get('/', [AdminCategoryController::class, 'user'])->name('index');
-    Route::get('/create', [CreateController::class, 'index'])->name('create');
-    Route::post('/', [StoreController::class, 'index'])->name('store');
-    Route::get('/{user}', [ShowController::class, 'index'])->name('show');
-    Route::get('/{user}/edit', [EditController::class, 'index'])->name('edit');
-    Route::patch('/{user}', [EditController::class, 'update'])->name('update');
-    Route::delete('/{user}', [DeleteController::class, 'delete'])->name('delete');
+    Route::get('/create', [CreateUserController::class, 'index'])->name('create');
+    Route::post('/', [StoreUserController::class, 'index'])->name('store');
+    Route::get('/{user}', [ShowUserController::class, 'index'])->name('show');
+    Route::get('/{user}/edit', [EditUserController::class, 'index'])->name('edit');
+    Route::patch('/{user}', [EditUserController::class, 'update'])->name('update');
+    Route::delete('/{user}', [DeleteUserController::class, 'delete'])->name('delete');
 });
 
 });

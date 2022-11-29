@@ -9,6 +9,6 @@ class CreateController extends Controller
 {
     public function index()
     {
-        return view('admin.categories.create');
+        return view('admin.user.create');
     }
 }

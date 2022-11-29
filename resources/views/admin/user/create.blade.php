@@ -31,8 +31,9 @@
           <form action="{{ route('admin.user.store') }}" method="POST" style="width: 30%;">
             @csrf
             <div class="card-body">
+
               <div class="form-group">
-                <label>Title</label>
+                <label>Name</label>
                 <input type="text" class="form-control" name="name" placeholder="User Name" required>
                 @error('name')
                     <div class="text-danger">
@@ -40,6 +41,27 @@
                     </div>
                 @enderror
               </div>
+
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email" placeholder="User Email" required>
+                @error('email')
+                    <div class="text-danger">
+                       {{ $message }}
+                    </div>
+                @enderror
+              </div>
+
+              <div class="form-group">
+                <label>Password</label>
+                <input type="text" class="form-control" name="password" placeholder="Password" required>
+                @error('password')
+                    <div class="text-danger">
+                       {{ $message }}
+                    </div>
+                @enderror
+              </div>
+
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

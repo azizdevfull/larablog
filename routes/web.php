@@ -77,6 +77,16 @@ Route::prefix('tags')->name('tag.')->group(function () {
     Route::delete('/{tag}', [DeleteTagController::class, 'delete'])->name('delete');
 });
 
+Route::prefix('users')->name('user.')->group(function () {
+    Route::get('/', [AdminCategoryController::class, 'user'])->name('index');
+    Route::get('/create', [CreateController::class, 'index'])->name('create');
+    Route::post('/', [StoreController::class, 'index'])->name('store');
+    Route::get('/{user}', [ShowController::class, 'index'])->name('show');
+    Route::get('/{user}/edit', [EditController::class, 'index'])->name('edit');
+    Route::patch('/{user}', [EditController::class, 'update'])->name('update');
+    Route::delete('/{user}', [DeleteController::class, 'delete'])->name('delete');
+});
+
 });
 Auth::routes();
 

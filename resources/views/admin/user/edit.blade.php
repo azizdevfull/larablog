@@ -53,22 +53,26 @@
               </div>
 
               <div class="form-group">
-                <label>Select User</label>
-                <select name="role_id" class="form-control">
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
+              </div>
+
+              <div class="form-group">
+                <label>Select Role</label>
+                <select name="role" class="form-control">
                   @foreach ($roles as $id => $role)
                       
                   <option value="{{ $id }}"
-                    {{ $id == old('role_id') ? 'selected' : '' }}
+                    {{ $id == $user->role ? 'selected' : '' }}
                     >{{ $role }}</option>
                   @endforeach
                 </select>
-                @error('role_id')
+                @error('role')
                 <div class="text-danger">
                    {{ $message }}
                 </div>
             @enderror
               </div>
-              
+
             </div>
             <!-- /.card-body -->
             <div class="card-footer">

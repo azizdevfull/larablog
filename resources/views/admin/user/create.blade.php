@@ -63,8 +63,8 @@
               </div>
 
               <div class="form-group">
-                <label>Select User</label>
-                <select name="role_id" class="form-control">
+                <label>Select Role</label>
+                <select name="role" class="form-control">
                   @foreach ($roles as $id => $role)
                       
                   <option value="{{ $id }}"
@@ -72,7 +72,7 @@
                     >{{ $role }}</option>
                   @endforeach
                 </select>
-                @error('role_id')
+                @error('role')
                 <div class="text-danger">
                    {{ $message }}
                 </div>

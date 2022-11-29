@@ -34,7 +34,7 @@
 
               <div class="form-group">
                 <label>Name</label>
-                <input type="text" class="form-control" name="name" placeholder="User Name" required>
+                <input type="text" class="form-control" name="name" placeholder="User Name" value="{{ old('name') }}" required>
                 @error('name')
                     <div class="text-danger">
                        {{ $message }}
@@ -44,7 +44,7 @@
 
               <div class="form-group">
                 <label>Email</label>
-                <input type="text" class="form-control" name="email" placeholder="User Email" required>
+                <input type="text" class="form-control"  name="email" placeholder="User Email" value="{{ old('email') }}" required>
                 @error('email')
                     <div class="text-danger">
                        {{ $message }}
@@ -54,7 +54,7 @@
 
               <div class="form-group">
                 <label>Password</label>
-                <input type="text" class="form-control" name="password" placeholder="Password" required>
+                <input type="text" class="form-control" name="password" placeholder="Password" value="{{ old('password') }}">
                 @error('password')
                     <div class="text-danger">
                        {{ $message }}

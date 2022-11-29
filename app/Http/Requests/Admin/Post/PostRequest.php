@@ -33,4 +33,20 @@ class PostRequest extends FormRequest
             'tag_ids.*' => 'nullable|integer|exists:tags,id',
         ];
     }
+
+    // public function messages()
+    // {
+    //     return [
+    //         'title.required' => 'Title wasnt provided',
+    //         'title.string' => 'Data was not empty',
+    //         'preview_image.required' => 'This image was not provided',
+    //         'preview_image.file' => 'Empty image was provided',
+    //         'main_image.required' => 'This image was not provided',
+    //         'main_image.file' => 'Empty image was provided',
+    //         'category_id.required' => 'This category was not provided',
+    //         'category_id.integer' => 'Category was not provided',
+    //         'category_id.exists' => 'Category ID was not in db',
+    //         'tag_ids.array' => 'Wrong number of tags id array was provided',
+    //     ];
+    // }
 }

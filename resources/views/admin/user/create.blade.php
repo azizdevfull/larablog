@@ -26,7 +26,7 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-12">
-          Create Category
+          Create User
           
           <form action="{{ route('admin.user.store') }}" method="POST" style="width: 30%;">
             @csrf
@@ -60,6 +60,23 @@
                        {{ $message }}
                     </div>
                 @enderror
+              </div>
+
+              <div class="form-group">
+                <label>Select User</label>
+                <select name="role_id" class="form-control">
+                  @foreach ($roles as $id => $role)
+                      
+                  <option value="{{ $id }}"
+                    {{ $id == old('role_id') ? 'selected' : '' }}
+                    >{{ $role }}</option>
+                  @endforeach
+                </select>
+                @error('role_id')
+                <div class="text-danger">
+                   {{ $message }}
+                </div>
+            @enderror
               </div>
 
             </div>

@@ -11,7 +11,8 @@ class EditController extends Controller
 {
     public function index(User $user)
     {
-        return view('admin.user.edit', compact('user'));
+        $roles = User::getRoles();
+        return view('admin.user.edit', compact('user', 'roles'));
     }
 
     public function update(UpdateRequest $request, User $user)

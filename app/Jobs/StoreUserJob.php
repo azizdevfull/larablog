@@ -2,12 +2,15 @@
 
 namespace App\Jobs;
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 class StoreUserJob implements ShouldQueue
 {
@@ -18,7 +21,7 @@ class StoreUserJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
         //
     }
@@ -30,6 +33,8 @@ class StoreUserJob implements ShouldQueue
      */
     public function handle()
     {
-        //
+        $password = Str::random(10);
+        $data['password'] = Hash::make($password);
+        $user = User::firstOrCreate(['email' => $data['email']],$data);
     }
 }

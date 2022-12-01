@@ -43,7 +43,7 @@ class PasswordMail extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'mal.user.password',
+            markdown: 'mail.user.password',
         );
     }
 

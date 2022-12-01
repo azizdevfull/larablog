@@ -30,6 +30,9 @@ use App\Http\Controllers\Admin\User\CreateController as CreateUserController;
 use App\Http\Controllers\Admin\User\DeleteController as DeleteUserController;
 
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
+use App\Http\Controllers\Personal\Main\IndexController as PersonalIndexController;
+use App\Http\Controllers\Personal\Liked\IndexController as PersonalLikedIndexController;
+use App\Http\Controllers\Personal\Commennt\IndexController as PersonalCommentIndexController;
 use App\Http\Controllers\Admin\Main\IndexController as TagIndexController;
 
 use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryController;
@@ -47,6 +50,12 @@ use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryControll
 
 Route::get('/', [IndexController::class, 'index']);
 
+Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->group(function () {
+    Route::get('/', [PersonalIndexController::class, 'index'])->name('main.index');
+    Route::get('/', [PersonalLikedIndexController::class, 'index'])->name('liked.index');
+    Route::get('/', [PersonalCommentIndexController::class, 'index'])->name('comment.index');
+});   
+ 
 Route::prefix('admin')->name('admin.')->middleware('auth','admin', 'verified')->group(function () {
 Route::get('/', [AdminIndexController::class, 'index'])->name('main.index');
 

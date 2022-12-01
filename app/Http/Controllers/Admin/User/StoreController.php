@@ -19,8 +19,7 @@ class StoreController extends Controller
     {
         // aaizz@gm.com
         $data = $request->validated();
-        Mail::to($data['email'])->send(new PasswordMail($password));
-        event(new Registered($user));
+
         return redirect()->route('admin.user.index');
     }
 }

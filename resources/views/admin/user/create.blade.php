@@ -53,16 +53,6 @@
               </div>
 
               <div class="form-group">
-                <label>Password</label>
-                <input type="text" class="form-control" name="password" placeholder="Password" value="{{ old('password') }}">
-                @error('password')
-                    <div class="text-danger">
-                       {{ $message }}
-                    </div>
-                @enderror
-              </div>
-
-              <div class="form-group">
                 <label>Select Role</label>
                 <select name="role" class="form-control">
                   @foreach ($roles as $id => $role)

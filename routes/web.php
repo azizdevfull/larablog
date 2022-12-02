@@ -48,7 +48,7 @@ use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryControll
 |
 */
 
-Route::get('/', [IndexController::class, 'index']);
+Route::get('/', [IndexController::class, 'index'])->name('main.index');
 
 Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->group(function () {
     Route::get('/', [PersonalIndexController::class, 'index'])->name('main.index');

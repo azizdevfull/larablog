@@ -30,8 +30,25 @@
                     
                     </div>
                 </section>
+                <h2 class="section-title mb-5" data-aos="fade-up">Comments ({{ $post->comments->count() }})</h2>
+                <section class="comment-list mb-5">
+                    @foreach ($post->comments as $comment)
+                        
+                    <div class="comment-text mb-2">
+                        <span class="username">
+                            <div>
+                                {{ $comment->user->name }}    
+                            </div> 
+                            <span class="text-muted float-right">        <time class="comment-date" pubdate="pubdate">{{ $comment->created_at->diffForHumans() }}</time>
+</span>
+                        </span><!-- /.username -->
+                        {{ $comment->message }}
+                    </div>
+                    @endforeach
+                </section>
+
                 <section class="comment-section">
-                    <h2 class="section-title mb-5" data-aos="fade-up">Leave a Reply</h2>
+                    <h2 class="section-title mb-5" data-aos="fade-up">Send Comment</h2>
                     <form action="{{ route('posts.comments.store', $post) }}" method="post">
                         @csrf
                         <div class="row">

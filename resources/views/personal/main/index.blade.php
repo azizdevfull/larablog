@@ -51,7 +51,7 @@
               <div class="icon">
                 <i class="nav-icon bi bi-journal-bookmark"></i>
               </div>
-              <a href="{{ route('personal.comment.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('personal.comments.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

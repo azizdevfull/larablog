@@ -46,15 +46,15 @@
                     </div>
                     @endforeach
                 </section>
-
+                @auth
                 <section class="comment-section">
                     <h2 class="section-title mb-5" data-aos="fade-up">Send Comment</h2>
                     <form action="{{ route('posts.comments.store', $post) }}" method="post">
                         @csrf
                         <div class="row">
                             <div class="form-group col-12" data-aos="fade-up">
-                            <label for="comment" class="sr-only">Comment</label>
-                            <textarea name="message" id="comment" class="form-control" placeholder="Comment" rows="10"></textarea>
+                                <label for="comment" class="sr-only">Comment</label>
+                                <textarea name="message" id="comment" class="form-control" placeholder="Comment" rows="10"></textarea>
                             </div>
                             <input type="hidden" name="post_id" value="{{ $post->id }}">
                         </div>
@@ -65,6 +65,7 @@
                         </div>
                     </form>
                 </section>
+                @endauth
             </div>
         </div>
     </div>

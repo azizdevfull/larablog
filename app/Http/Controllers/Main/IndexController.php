@@ -11,6 +11,7 @@ class IndexController extends Controller
     public function index()
     {
         $posts = Post::paginate(6);
-        return view('main.index', compact('posts'));
+        $randomPosts = Post::get()->random(4);
+        return view('main.index', compact('posts','randomPosts'));
     }
 }

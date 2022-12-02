@@ -19,7 +19,10 @@
                     </a>
                 </div>
                 @endforeach
-                <div>
+
+            </div>
+            <div class="row">
+                <div class="m-auto" style="margin-top: -40px;">
                     {{ $posts->links() }}
                 </div>
             </div>

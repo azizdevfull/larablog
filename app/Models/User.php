@@ -4,13 +4,14 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use App\Notifications\SendVerifyWithQueueNotification;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use App\Models\Post;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\SendVerifyWithQueueNotification;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -18,7 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     const ROLE_ADMIN = 0;
     const ROLE_READER = 1;
-    
+    // protected $table = 'posts';
     public static function getRoles()
     {
         return [
@@ -61,7 +62,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new SendVerifyWithQueueNotification());
     }
-    public function likedPost()
+    
+    public function likedPosts()
     {
         return $this->belongsToMany(Post::class,'post_user_likes', 'user_id', 'post_id');
     }

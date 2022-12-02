@@ -10,12 +10,18 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use function Termwind\render;
+
 class IndexController extends Controller
 {
     public function index()
     {
-        $posts = Auth()->user()->likedPost;
-        dd($posts);
+        $posts = Auth()->user()->likedPosts;
         return view('personal.liked.index', compact('posts'));
+    }
+    public function delete(Post $post)
+    {
+        Auth()->user()->likedPosts()->detach($post->id);
+        return redirect()->route('personal.liked.index');
     }
 }

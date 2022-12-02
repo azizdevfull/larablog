@@ -43,9 +43,9 @@
                   <tr>
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->title }}</td>
-                    <td><a href="{{ route('admin.post.show', $post) }}"><i class="bi bi-eye"></i></a></td>
+                    {{-- <td><a href="{{ route('personal.liked.show', $post) }}"><i class="bi bi-eye"></i></a></td> --}}
                     <td>
-                    <form action="{{ route('admin.post.delete', $post) }}" method="POST">
+                    <form action="{{ route('personal.liked.delete', $post) }}" method="POST">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="border-0 bg-transparent">

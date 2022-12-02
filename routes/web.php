@@ -53,6 +53,7 @@ Route::get('/', [IndexController::class, 'index']);
 Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->group(function () {
     Route::get('/', [PersonalIndexController::class, 'index'])->name('main.index');
     Route::get('/liked', [PersonalLikedIndexController::class, 'index'])->name('liked.index');
+    Route::delete('/liked/{post}', [PersonalLikedIndexController::class, 'delete'])->name('liked.delete');
     Route::get('/comment', [PersonalCommentIndexController::class, 'index'])->name('comment.index');
 });   
  

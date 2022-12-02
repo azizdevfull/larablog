@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Main\IndexController;
+use App\Http\Controllers\Post\IndexController as PostIndexController;
+use App\Http\Controllers\Post\ShowController as PostShowController;
 use App\Http\Controllers\Admin\Category\EditController;
 use App\Http\Controllers\Admin\Category\ShowController;
 use App\Http\Controllers\Admin\Category\StoreController;
@@ -49,6 +51,12 @@ use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryControll
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('main.index');
+
+Route::prefix('posts')->name('post.')->group(function () {
+Route::get('/', [PostIndexController::class, 'index'])->name('index');
+Route::get('/{post}', [PostShowController::class, 'index'])->name('show');
+    
+});
 
 Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->group(function () {
     Route::get('/', [PersonalIndexController::class, 'index'])->name('main.index');

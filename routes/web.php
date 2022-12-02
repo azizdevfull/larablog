@@ -53,10 +53,10 @@ use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryControll
 Route::get('/', [IndexController::class, 'index'])->name('main.index');
 
 Route::prefix('posts')->name('post.')->group(function () {
-Route::get('/', [PostIndexController::class, 'index'])->name('index');
-Route::get('/{post}', [PostShowController::class, 'index'])->name('show');
+    Route::get('/{post}', [PostShowController::class, 'index'])->name('show');
     
 });
+// Route::get('/', [PostIndexController::class, 'index'])->name('post.index');
 
 Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->group(function () {
     Route::get('/', [PersonalIndexController::class, 'index'])->name('main.index');

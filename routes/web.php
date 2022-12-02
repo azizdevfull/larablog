@@ -36,7 +36,7 @@ use App\Http\Controllers\Personal\Main\IndexController as PersonalIndexControlle
 use App\Http\Controllers\Personal\Liked\IndexController as PersonalLikedIndexController;
 use App\Http\Controllers\Personal\Comment\IndexController as PersonalCommentIndexController;
 use App\Http\Controllers\Admin\Main\IndexController as TagIndexController;
-
+use App\Http\Controllers\Comment\StoreController as PostCommentsController;
 use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryController;
 
 /*
@@ -55,7 +55,9 @@ Route::get('/', [IndexController::class, 'index'])->name('main.index');
 Route::prefix('posts')->name('post.')->group(function () {
     Route::get('/{post}', [PostShowController::class, 'index'])->name('show');
     
+    // User Comment routes 
 });
+Route::resource('posts.comments', PostCommentsController::class);
 // Route::get('/', [PostIndexController::class, 'index'])->name('post.index');
 
 Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->group(function () {

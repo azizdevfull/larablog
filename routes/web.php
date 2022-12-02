@@ -54,7 +54,12 @@ Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->gr
     Route::get('/', [PersonalIndexController::class, 'index'])->name('main.index');
     Route::get('/liked', [PersonalLikedIndexController::class, 'index'])->name('liked.index');
     Route::delete('/liked/{post}', [PersonalLikedIndexController::class, 'delete'])->name('liked.delete');
-    Route::get('/comment', [PersonalCommentIndexController::class, 'index'])->name('comment.index');
+    
+    // Comments routes
+    Route::get('/comments', [PersonalCommentIndexController::class, 'index'])->name('comments.index');
+    Route::get('/comments/{comment}', [PersonalCommentIndexController::class, 'edit'])->name('comments.edit');
+    Route::patch('/comments{comment}', [PersonalCommentIndexController::class, 'update'])->name('comments.update');
+    Route::delete('/comments/{comment}', [PersonalCommentIndexController::class, 'delete'])->name('comments.delete');
 });   
  
 Route::prefix('admin')->name('admin.')->middleware('auth','admin', 'verified')->group(function () {

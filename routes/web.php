@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Main\IndexController;
+use App\Http\Controllers\Category\IndexController as IndexCategoryController;
+
 use App\Http\Controllers\Post\IndexController as PostIndexController;
 use App\Http\Controllers\Post\ShowController as PostShowController;
 use App\Http\Controllers\Admin\Category\EditController;
@@ -37,8 +39,10 @@ use App\Http\Controllers\Personal\Liked\IndexController as PersonalLikedIndexCon
 use App\Http\Controllers\Personal\Comment\IndexController as PersonalCommentIndexController;
 use App\Http\Controllers\Admin\Main\IndexController as TagIndexController;
 use App\Http\Controllers\Comment\StoreController as PostCommentsController;
+use App\Http\Controllers\Like\StoreController as PostLikesController;
 use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryController;
-
+use App\Http\Controllers\Category\Post\IndexController as CategoryStoreController;
+use App\Http\Controllers\Category\Post\IndexController as CategoryPostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,13 +55,22 @@ use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryControll
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('main.index');
-
-Route::prefix('posts')->name('post.')->group(function () {
-    Route::get('/{post}', [PostShowController::class, 'index'])->name('show');
-    
-    // User Comment routes 
+Route::get('/categories', [IndexCategoryController::class, 'index'])->name('category.index');
+Route::prefix('categories')->group(function (){
+    Route::get('/{category}/posts', [CategoryStoreController::class, 'index'])->name('category.post.index' );
 });
+
+// Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function (){
+    
+//     Route::group(['namespace' => 'Post', 'prefix' => '{category}/posts'], function (){
+//         Route::get('/', 'IndexController')->name('category.post.index');
+//     });
+
+// });
+
+
 Route::resource('posts.comments', PostCommentsController::class);
+Route::resource('posts.likes', PostLikesController::class);
 // Route::get('/', [PostIndexController::class, 'index'])->name('post.index');
 
 Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->group(function () {

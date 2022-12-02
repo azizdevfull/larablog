@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/aos/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
     <script src="{{ 'assets/vendors/jquery/jquery.min.js' }}"></script>
     <script src="{{ 'assets/js/loader.js' }}"></script>
 </head>
@@ -25,6 +27,9 @@
                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('main.index') }}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('category.index') }}">Category</a>
                         </li>
                         <li class="nav-item">
                             @auth

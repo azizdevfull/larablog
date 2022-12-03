@@ -53,6 +53,9 @@ use App\Http\Controllers\Category\Post\IndexController as CategoryPostController
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/aziz/1/aziz', function(){
+    return view('aziz.aziz');
+});
 
 Route::get('/', [IndexController::class, 'index'])->name('main.index');
 Route::get('/categories', [IndexCategoryController::class, 'index'])->name('category.index');
@@ -71,7 +74,7 @@ Route::prefix('categories')->group(function (){
 
 Route::resource('posts.comments', PostCommentsController::class);
 Route::resource('posts.likes', PostLikesController::class);
-// Route::get('/', [PostIndexController::class, 'index'])->name('post.index');
+Route::get('/posts/{post}', [PostIndexController::class, 'show'])->name('post.show');
 
 Route::prefix('personal')->name('personal.')->middleware('auth', 'verified')->group(function () {
     Route::get('/', [PersonalIndexController::class, 'index'])->name('main.index');
